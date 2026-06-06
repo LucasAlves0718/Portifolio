@@ -1,219 +1,678 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="pt-active">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Alves | Desenvolvedor</title>
+    <title>Lucas Alves Corrêa dos Santos | Software Engineer Portfolio</title>
     <meta name="description"
-        content="Portfólio de Lucas Alves Correa dos Santos, Técnico em Desenvolvimento de Sistemas.">
+        content="Portfólio profissional de Lucas Alves Corrêa dos Santos, estudante de Ciência da Computação e Desenvolvedor Backend / Full Stack.">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+    <!-- Ambient Radial Glow Spots -->
+    <div class="bg-glow">
+        <div class="glow-spot" style="top: -100px; left: 20%;"></div>
+        <div class="glow-spot" style="top: 30%; right: 10%;"></div>
+        <div class="glow-spot" style="bottom: 10%; left: 15%;"></div>
+    </div>
 
-    <header class="navbar">
-        <a href="#home" class="logo">Lucas<span>.</span></a>
-        <nav class="nav-links">
-            <a href="#home">Início</a>
-            <a href="#about">Sobre</a>
-            <a href="#education">Formação</a>
-            <a href="#skills">Habilidades</a>
-            <a href="#projects">Projetos</a>
-            <a href="#contact">Contato</a>
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <a href="#home" class="logo">
+            Lucas Alves<span class="dot">.</span>
+        </a>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="#home" class="active" data-i18n="nav_home">Início</a>
+            <a href="#about" data-i18n="nav_about">Sobre Mim</a>
+            <a href="#stack" data-i18n="nav_stack">Tecnologias</a>
+            <a href="#projects" data-i18n="nav_projects">Projetos</a>
+            <a href="#education" data-i18n="nav_education">Educação</a>
+            <a href="#contact" data-i18n="nav_contact">Contato</a>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+
+        <div class="nav-actions">
+            <!-- Language Switcher -->
+            <div class="lang-toggle pt-active" id="lang-toggle-btn" aria-label="Change Language">
+                <div class="slider"></div>
+                <span class="lang-pt">PT</span>
+                <span class="lang-en">EN</span>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="mobile-menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero section-hidden">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
             <div class="hero-content">
-                <p class="greeting">Olá, mundo! Eu sou Lucas Alves</p>
-                <h1 class="title">Desenvolvedor <span class="highlight typed-text"></span><span
-                        class="cursor">&nbsp;</span></h1>
-                <p class="subtitle">Técnico em Desenvolvimento de Sistemas focado em desenvolvimento web e mobile,
-                    criando aplicações conectadas e interfaces responsivas.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-                    <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
+                <!-- Avatar image fetched dynamically or pointing to GitHub avatar -->
+                <div class="avatar-container">
+                    <img src="https://github.com/LucasAlves0718.png" alt="Lucas Alves Corrêa dos Santos"
+                        id="hero-avatar">
                 </div>
-            </div>
-        </section>
 
-        <section id="about" class="about section-hidden">
-            <h2 class="section-title">Sobre <span>Mim</span></h2>
-            <div class="about-content glass-panel">
-                <p>Sou um <strong>Técnico em Desenvolvimento de Sistemas</strong> de São José dos Campos - SP,
-                    atualmente em Alegrete - RS , com
-                    perfil técnico voltado ao desenvolvimento web e mobile, integração com bancos de dados e construção
-                    de aplicações completas.</p>
-                <p>Tenho experiência prática com HTML, CSS, PHP, MySQL e React Native (Expo), atuando no desenvolvimento
-                    de sistemas CRUD, estruturação de back-end, criação de interfaces e organização de dados.</p>
-                <p><strong>Objetivo Profissional:</strong> Busco uma oportunidade de estágio na área de Tecnologia da
-                    Informação, com foco no desenvolvimento de aplicações e aprimoramento de boas práticas de
-                    programação, contribuindo com soluções técnicas enquanto amplio meus conhecimentos profissionais.
+                <div class="hero-badge">
+                    <i data-lucide="circle-dot"
+                        style="width: 14px; height: 14px; fill: var(--accent); stroke-width: 0;"></i>
+                    <span data-i18n="hero_status">Aberto a Oportunidades</span>
+                </div>
+
+                <h1 data-i18n="hero_title">
+                    Lucas Alves <span class="gradient-name">Corrêa dos Santos</span>
+                </h1>
+
+                <div class="typewriter-container">
+                    <span id="typed-text"></span><span class="cursor"></span>
+                </div>
+
+                <p class="description" data-i18n="hero_desc">
+                    Estudante de Ciência da Computação com formação técnica em Desenvolvimento de Sistemas. Experiência
+                    prática no desenvolvimento de aplicações web, APIs e projetos de software utilizando Python, Django,
+                    JavaScript, Node.js e bancos de dados relacionais. Interesse em Backend, Engenharia de Software,
+                    Tecnologia Esportiva e Desenvolvimento de Jogos.
                 </p>
-            </div>
-        </section>
 
-        <section id="education" class="education section-hidden">
-            <h2 class="section-title">Minha <span>Formação</span></h2>
-            <div class="education-grid">
-                <div class="education-card glass-panel">
-                    <div class="edu-icon"></div>
-                    <div class="edu-info">
-                        <h3>Técnico em Desenvolvimento de Sistemas</h3>
-                        <p class="institution">ETEC - São José dos Campos, SP</p>
-                        <span class="period">fev 2023 – dez 2025</span>
-                    </div>
-                </div>
-                <div class="education-card glass-panel">
-                    <div class="edu-icon"></div>
-                    <div class="edu-info">
-                        <h3>Ciência da Computação</h3>
-                        <p class="institution">Unipampa - Alegrete, RS</p>
-                        <span class="period">Mar 2026 – Jul 2030</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills section-hidden">
-            <h2 class="section-title">Minhas <span>Habilidades</span></h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Lógica de Programação</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 95%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>HTML & CSS</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>PHP, MySQL & Supabase</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Desenvolvimento CRUD & DB</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>React Native (Expo)</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Git & GitHub</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="subsection-title">Idiomas</h3>
-            <div class="languages-grid">
-                <div class="language-card glass-panel">
-                    <span class="flag">🇺🇸</span>
-                    <h4>Inglês</h4>
-                    <p>Avançado</p>
-                </div>
-                <div class="language-card glass-panel">
-                    <span class="flag">🇪🇸</span>
-                    <h4>Espanhol</h4>
-                    <p>Intermediário</p>
+                <div class="hero-buttons">
+                    <!-- Pointing to resume.pdf in the root directory -->
+                    <a href="resume.pdf" download="Lucas_Alves_Resume.pdf" class="btn btn-primary" id="btn-resume">
+                        <i data-lucide="download"></i>
+                        <span data-i18n="btn_resume">Download Currículo</span>
+                    </a>
+                    <a href="https://github.com/LucasAlves0718" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary">
+                        <i data-lucide="github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/lucas-alves-7500a3333" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary">
+                        <i data-lucide="linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i data-lucide="mail"></i>
+                        <span data-i18n="btn_contact">Contato</span>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- About Me Section -->
+        <section id="about" class="about section-hidden">
+            <h2 class="section-title"><span data-i18n="title_about">Sobre Mim</span></h2>
+
+            <div class="about-grid">
+                <div class="about-info">
+                    <p data-i18n="about_p1">
+                        Técnico em Desenvolvimento de Sistemas formado pela <strong>ETEC Professora Ilza Nascimento
+                            Pintus</strong> (2023 – 2025). Durante o curso técnico, consolidei uma base sólida em
+                        algoritmos, modelagem de dados e desenvolvimento de software completo.
+                    </p>
+                    <p data-i18n="about_p2">
+                        Atualmente, curso Bacharelado em <strong>Ciência da Computação na Universidade Federal do Pampa
+                            (UNIPAMPA)</strong>. Sou apaixonado por resolver problemas lógicos complexos e desenvolver
+                        aplicações eficientes que resolvem gargalos de negócio.
+                    </p>
+                    <p data-i18n="about_p3">
+                        Meu foco principal é o ecossistema de <strong>Backend e Engenharia de Software</strong>,
+                        estruturando códigos limpos, arquiteturas sustentáveis e fluxos de dados seguros.
+                    </p>
+                </div>
+
+                <div class="about-interests glass-panel">
+                    <h3 data-i18n="about_interests_title">
+                        <i data-lucide="sparkles"></i>
+                        Focos de Interesse
+                    </h3>
+                    <div class="interests-list">
+                        <div class="interest-item">
+                            <i data-lucide="terminal"></i>
+                            <span data-i18n="interest_1">Backend & Desenvolvimento de APIs</span>
+                        </div>
+                        <div class="interest-item">
+                            <i data-lucide="git-branch"></i>
+                            <span data-i18n="interest_2">Engenharia de Software & Arquitetura</span>
+                        </div>
+                        <div class="interest-item">
+                            <i data-lucide="gamepad-2"></i>
+                            <span data-i18n="interest_3">Desenvolvimento de Jogos & POO</span>
+                        </div>
+                        <div class="interest-item">
+                            <i data-lucide="bar-chart-3"></i>
+                            <span data-i18n="interest_4">Data Analytics Aplicado a Esportes</span>
+                        </div>
+                        <div class="interest-item">
+                            <i data-lucide="database"></i>
+                            <span data-i18n="interest_5">Modelagem Relacional & Otimização de Bancos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="stack" class="stack section-hidden">
+            <h2 class="section-title"><span data-i18n="title_stack">Stack Tecnológica</span></h2>
+
+            <div class="stack-layout">
+                <!-- Category 1: Languages -->
+                <div class="stack-category glass-panel">
+                    <h3>
+                        <i data-lucide="code-2"></i>
+                        <span data-i18n="stack_cat_languages">Linguagens</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-tag accent-skill">Python</div>
+                        <div class="skill-tag accent-skill">JavaScript</div>
+                        <div class="skill-tag">C</div>
+                        <div class="skill-tag">C#</div>
+                        <div class="skill-tag">PHP</div>
+                        <div class="skill-tag">GDScript</div>
+                        <div class="skill-tag">Java <span style="font-size:0.75rem; opacity:0.6;">(Básico)</span></div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Backend -->
+                <div class="stack-category glass-panel">
+                    <h3>
+                        <i data-lucide="server"></i>
+                        <span data-i18n="stack_cat_backend">Backend</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-tag accent-skill">Django</div>
+                        <div class="skill-tag accent-skill">Flask</div>
+                        <div class="skill-tag accent-skill">Node.js</div>
+                        <div class="skill-tag">Express.js</div>
+                        <div class="skill-tag">REST APIs</div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Database -->
+                <div class="stack-category glass-panel">
+                    <h3>
+                        <i data-lucide="database"></i>
+                        <span data-i18n="stack_cat_databases">Bancos de Dados</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-tag accent-skill">MySQL</div>
+                        <div class="skill-tag">SQL</div>
+                        <div class="skill-tag">Supabase</div>
+                        <div class="skill-tag">Modelagem Relacional</div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Front-end -->
+                <div class="stack-category glass-panel">
+                    <h3>
+                        <i data-lucide="layout"></i>
+                        <span data-i18n="stack_cat_frontend">Front-End</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-tag">HTML5</div>
+                        <div class="skill-tag">CSS3</div>
+                        <div class="skill-tag">React</div>
+                        <div class="skill-tag">React Native</div>
+                        <div class="skill-tag">Responsive Design</div>
+                    </div>
+                </div>
+
+                <!-- Category 5: Tools -->
+                <div class="stack-category glass-panel">
+                    <h3>
+                        <i data-lucide="wrench"></i>
+                        <span data-i18n="stack_cat_tools">Ferramentas</span>
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-tag accent-skill">Git</div>
+                        <div class="skill-tag accent-skill">GitHub</div>
+                        <div class="skill-tag">VS Code</div>
+                        <div class="skill-tag">Postman</div>
+                        <div class="skill-tag">Linux / Terminal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages Grid inside Stack -->
+            <div class="languages-layout">
+                <div class="lang-card glass-panel">
+                    <span class="lang-flag">🇧🇷</span>
+                    <div class="lang-info">
+                        <h4 data-i18n="lang_pt_title">Português</h4>
+                        <p data-i18n="lang_pt_desc">Nativo</p>
+                    </div>
+                </div>
+                <div class="lang-card glass-panel">
+                    <span class="lang-flag">🇺🇸</span>
+                    <div class="lang-info">
+                        <h4 data-i18n="lang_en_title">Inglês</h4>
+                        <p data-i18n="lang_en_desc">Avançado</p>
+                    </div>
+                </div>
+                <div class="lang-card glass-panel">
+                    <span class="lang-flag">🇪🇸</span>
+                    <div class="lang-info">
+                        <h4 data-i18n="lang_es_title">Espanhol</h4>
+                        <p data-i18n="lang_es_desc">Intermediário</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
         <section id="projects" class="projects section-hidden">
-            <h2 class="section-title">Meus <span>Projetos</span></h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
+            <h2 class="section-title"><span data-i18n="title_projects">Projetos em Destaque</span></h2>
+
+            <div class="projects-layout">
+                <!-- Project 1: DraftMe -->
                 <div class="project-card glass-panel">
-                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                    <div class="project-header"
+                        style="background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2) 0%, transparent 70%);">
+                        <div class="bg-gradient" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);"></div>
                         <span>DraftMe</span>
                     </div>
-                    <div class="project-info">
-                        <h3>DraftMe — Plataforma Web e Mobile</h3>
-                        <p>Plataforma para conectar jovens atletas a clubes esportivos, permitindo a criação e
-                            organização de perfis para maior visibilidade esportiva.</p>
-                        <p class="project-details">Estructurei a lógica da aplicação, interfaces responsivas, fluxos de
-                            cadastro e manipulação de dados em todo o sistema (Full Stack).</p>
-                        <div class="tags">
+                    <div class="project-body">
+                        <h3 data-i18n="proj1_title">DraftMe — Conexão Esportiva</h3>
+                        <p class="desc" data-i18n="proj1_desc">
+                            Plataforma desenvolvida para aproximar jovens atletas de oportunidades esportivas e clubes
+                            de futebol/basquete por meio da tecnologia.
+                        </p>
+
+                        <div class="project-responsibilities">
+                            <h4 data-i18n="proj_resp_title">Minhas Responsabilidades:</h4>
+                            <ul>
+                                <li>
+                                    <i data-lucide="check" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj1_resp1">Desenvolvimento completo da interface web
+                                        responsiva.</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="check" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj1_resp2">Implementação de regras de negócio e fluxos de
+                                        cadastro.</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="check" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj1_resp3">Estruturação da experiência de usuário
+                                        intuitiva.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-tags">
                             <span>HTML5</span>
                             <span>CSS3</span>
-                            <span>React Native (Expo)</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
                         </div>
                     </div>
                 </div>
-                <!-- Project 2 -->
+
+                <!-- Project 2: Web Apps & APIs -->
                 <div class="project-card glass-panel">
-                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, #10b981, #047857);">
-                        <span>CRUD Mundo</span>
+                    <div class="project-header"
+                        style="background: radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, transparent 70%);">
+                        <div class="bg-gradient" style="background: linear-gradient(135deg, #065F46, #10B981);"></div>
+                        <span>APIs & Apps</span>
                     </div>
-                    <div class="project-info">
-                        <h3>CRUD Mundo — Sistema Web e Mobile</h3>
-                        <p>Sistema desenvolvido para cadastro e gerenciamento de dados geográficos, com implementação
-                            completa das operações CRUD.</p>
-                        <p class="project-details">Modelagem de banco de dados relacional, integração front/back e
-                            validação de dados em ambas as plataformas.</p>
-                        <div class="tags">
-                            <span>PHP</span>
-                            <span>MySQL</span>
+                    <div class="project-body">
+                        <h3 data-i18n="proj2_title">Aplicações Web e APIs REST</h3>
+                        <p class="desc" data-i18n="proj2_desc">
+                            Desenvolvimento de ecossistemas backend robustos com foco em desempenho, segurança e
+                            separação clara de responsabilidades.
+                        </p>
+
+                        <div class="project-responsibilities">
+                            <h4 data-i18n="proj_feat_title">Destaques Técnicos:</h4>
+                            <ul>
+                                <li>
+                                    <i data-lucide="shield-check" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj2_feat1">APIs RESTful seguras com autenticação JWT.</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="database" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj2_feat2">Integração com MySQL/PostgreSQL com modelagem
+                                        relacional limpa.</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="key" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj2_feat3">Rotas protegidas com controle de acesso baseado em
+                                        níveis.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>Flask</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
                             <span>Supabase</span>
-                            <span>RN Expo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Game Dev -->
+                <div class="project-card glass-panel">
+                    <div class="project-header"
+                        style="background: radial-gradient(circle at center, rgba(139, 92, 246, 0.2) 0%, transparent 70%);">
+                        <div class="bg-gradient" style="background: linear-gradient(135deg, #5B21B6, #8B5CF6);"></div>
+                        <span>Game Dev</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 data-i18n="proj3_title">Desenvolvimento de Jogos</h3>
+                        <p class="desc" data-i18n="proj3_desc">
+                            Projetos autorais voltados ao estudo de motores de renderização, simulação física de
+                            gameplay e sistemas de IA básica.
+                        </p>
+
+                        <div class="project-responsibilities">
+                            <h4 data-i18n="proj_concepts_title">Conceitos Aplicados:</h4>
+                            <ul>
+                                <li>
+                                    <i data-lucide="cpu" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj3_concept1">Programação Orientada a Objetos (POO)
+                                        avançada.</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="git-commit" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj3_concept2">Máquinas de Estados (FSM) para gerenciamento de
+                                        gameplay.</span>
+                                </li>
+                                <li>
+                                    <i data-lucide="activity" style="width:16px; height:16px;"></i>
+                                    <span data-i18n="proj3_concept3">Renderização de cenários 3D e detecção de
+                                        colisões.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-tags">
+                            <span>Panda3D</span>
+                            <span>Python</span>
+                            <span>GDScript</span>
+                            <span>Godot</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Experience & Objectives Timeline Section -->
+        <section id="education" class="education section-hidden">
+            <h2 class="section-title"><span data-i18n="title_timeline">Jornada e Formação</span></h2>
+
+            <!-- Timeline Structure -->
+            <div class="timeline-container">
+                <!-- ETEC -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-panel">
+                        <span class="date">2023 – 2025</span>
+                        <h3 data-i18n="time1_title">ETEC Professora Ilza Nascimento Pintus</h3>
+                        <h4 data-i18n="time1_subtitle">Técnico em Desenvolvimento de Sistemas</h4>
+                        <p data-i18n="time1_desc">Consolidação de conceitos em engenharia de requisitos, lógica
+                            estruturada, Programação Orientada a Objetos e banco de dados relacionais MySQL. Criação de
+                            projetos práticos e modelagem de sistemas corporativos.</p>
+                    </div>
+                </div>
+
+                <!-- Web Projects -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-panel">
+                        <span class="date">2024 – 2025</span>
+                        <h3 data-i18n="time2_title">Desenvolvimento de Projetos Web</h3>
+                        <h4 data-i18n="time2_subtitle">Aplicações Full Stack & Front-End</h4>
+                        <p data-i18n="time2_desc">Desenvolvimento e design de projetos completos, incluindo a plataforma
+                            DraftMe para atletas. Uso prático de PHP, estruturação de grids flexíveis com HTML/CSS e
+                            integração com MySQL.</p>
+                    </div>
+                </div>
+
+                <!-- APIs -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-panel">
+                        <span class="date">2025</span>
+                        <h3 data-i18n="time3_title">Especialização em APIs REST</h3>
+                        <h4 data-i18n="time3_subtitle">Foco em Arquiteturas Backend</h4>
+                        <p data-i18n="time3_desc">Modelagem de serviços RESTful, validação de tokens JWT, controle de
+                            rotas seguras e arquitetura CRUD complexa. Experiência de desenvolvimento com Django, Flask
+                            e Node.js.</p>
+                    </div>
+                </div>
+
+                <!-- Game Dev study -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-panel">
+                        <span class="date">2025 – 2026</span>
+                        <h3 data-i18n="time4_title">Estudo de Programação de Jogos</h3>
+                        <h4 data-i18n="time4_subtitle">Motores Gráficos e Estrutura Lógica</h4>
+                        <p data-i18n="time4_desc">Aplicação de conceitos matemáticos, gerenciamento de loop principal,
+                            sincronização e física de colisão. Desenvolvimento de scripts customizados com GDScript
+                            (Godot Engine) e Panda3D (Python).</p>
+                    </div>
+                </div>
+
+                <!-- UNIPAMPA -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-panel">
+                        <span class="date">2026 – Atual</span>
+                        <h3 data-i18n="time5_title">Universidade Federal do Pampa (UNIPAMPA)</h3>
+                        <h4 data-i18n="time5_subtitle">Bacharelado em Ciência da Computação</h4>
+                        <p data-i18n="time5_desc">Aprofundamento em computação teórica, análise de algoritmos complexos,
+                            arquitetura de computadores e metodologias modernas de engenharia de software para projetos
+                            de larga escala.</p>
+                    </div>
+                </div>
+
+                <!-- Future Goal -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card glass-panel"
+                        style="border-color: rgba(59, 130, 246, 0.3); background: rgba(59,130,246,0.02);">
+                        <span class="date" style="color: #60A5FA;" data-i18n="time6_badge">Objetivo de Carreira</span>
+                        <h3 data-i18n="time6_title">Engenheiro de Software Backend</h3>
+                        <h4 data-i18n="time6_subtitle">Foco em Sistemas Escalonáveis</h4>
+                        <p data-i18n="time6_desc">Construir sistemas eficientes e integrados, microserviços escaláveis,
+                            data engineering aplicável a tecnologia esportiva e arquiteturas de alta disponibilidade em
+                            nuvem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Dynamic Section -->
+        <section id="github" class="github section-hidden">
+            <h2 class="section-title"><span data-i18n="title_github">Portfólio GitHub</span></h2>
+
+            <div class="github-grid">
+                <!-- Repositories dynamic loading container -->
+                <div class="github-repos-container">
+                    <div class="github-repos-header">
+                        <h3>
+                            <i data-lucide="folder-git-2"></i>
+                            <span data-i18n="github_repos_title">Repositórios Recentes</span>
+                        </h3>
+                        <a href="https://github.com/LucasAlves0718" target="_blank" rel="noopener noreferrer"
+                            class="btn-text"
+                            style="color:var(--accent); font-size:0.9rem; text-decoration:none; font-weight:600;">
+                            <span data-i18n="github_see_all">Ver tudo no GitHub</span>
+                            <i data-lucide="arrow-up-right" style="width:14px; height:14px; display:inline-block;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Repository Grid (where elements are dynamically generated or loaded via Skeletons) -->
+                    <div class="github-repos-grid" id="github-repos-root">
+                        <!-- Skeletons showing before JS fetches -->
+                        <div class="skeleton-card">
+                            <div>
+                                <div class="skeleton skeleton-text" style="width:40%;"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text short"></div>
+                            </div>
+                            <div class="skeleton skeleton-text" style="width:20%; height:8px;"></div>
+                        </div>
+                        <div class="skeleton-card">
+                            <div>
+                                <div class="skeleton skeleton-text" style="width:30%;"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text short"></div>
+                            </div>
+                            <div class="skeleton skeleton-text" style="width:20%; height:8px;"></div>
+                        </div>
+                        <div class="skeleton-card">
+                            <div>
+                                <div class="skeleton skeleton-text" style="width:50%;"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text short"></div>
+                            </div>
+                            <div class="skeleton skeleton-text" style="width:20%; height:8px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Visual Stats -->
+                <div class="github-widgets">
+                    <!-- General Stats -->
+                    <div class="widget-card glass-panel">
+                        <h3>
+                            <i data-lucide="bar-chart-2"></i>
+                            <span data-i18n="github_stats_title">Estatísticas Gerais</span>
+                        </h3>
+                        <div class="widget-content">
+                            <!-- GitHub readme stats widget loaded dynamically with username -->
+                            <img src="https://github-readme-stats.vercel.app/api?username=LucasAlves0718&show_icons=true&theme=transparent&text_color=a1a1aa&title_color=ffffff&icon_color=3b82f6&border_color=1f1f1f&bg_color=111111"
+                                alt="Lucas Alves GitHub Stats" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Top Languages -->
+                    <div class="widget-card glass-panel">
+                        <h3>
+                            <i data-lucide="pie-chart"></i>
+                            <span data-i18n="github_langs_title">Linguagens mais utilizadas</span>
+                        </h3>
+                        <div class="widget-content">
+                            <!-- GitHub top languages widget -->
+                            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasAlves0718&layout=compact&theme=transparent&text_color=a1a1aa&title_color=ffffff&icon_color=3b82f6&border_color=1f1f1f&bg_color=111111"
+                                alt="Lucas Alves Top Languages" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Contribution Graph widget -->
+                    <div class="widget-card glass-panel">
+                        <h3>
+                            <i data-lucide="calendar"></i>
+                            <span data-i18n="github_graph_title">Calendário de Atividade</span>
+                        </h3>
+                        <div class="widget-content">
+                            <!-- Contribution activity graph -->
+                            <img src="https://github-readme-activity-graph.vercel.app/graph?username=LucasAlves0718&theme=react-dark&bg_color=111111&color=3b82f6&line=3b82f6&point=ffffff&hide_border=true"
+                                alt="Lucas Alves Contribution Graph" style="width:100%;" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="contact section-hidden">
-            <h2 class="section-title">Vamos <span>Conversar</span></h2>
-            <div class="contact-container glass-panel">
-                <p>Estou em busca de minha primeira vaga de estágio na área de Tecnologia da Informação. Se quiser
-                    trocar ideias ou tem uma oportunidade, entre em contato!</p>
+            <h2 class="section-title"><span data-i18n="title_contact_sec">Vamos Conversar</span></h2>
 
-                <div class="contact-details">
-                    <p>📍 Alegrete - Rs</p>
-                    <p>📧 lucasalves200711@gmail.com</p>
-                    <p>📱 +55 12 99759-5797</p>
+            <div class="contact-container">
+                <!-- Info details -->
+                <div class="contact-info-panel">
+                    <h3 data-i18n="contact_greeting">Fale Comigo!</h3>
+                    <p class="desc" data-i18n="contact_desc">
+                        Estou em busca de minha primeira vaga de estágio ou cargo júnior na área de Engenharia de
+                        Software e Desenvolvimento Backend. Sinta-se à vontade para entrar em contato se você tiver uma
+                        oportunidade ou quiser colaborar em um projeto!
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Alegrete, Rio Grande do Sul - Brasil</span>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:lucasalves200711@gmail.com">lucasalves200711@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+5512997595797">+55 (12) 99759-5797</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials">
+                        <a href="https://github.com/LucasAlves0718" target="_blank" rel="noopener noreferrer"
+                            class="social-circle-btn" aria-label="GitHub">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/lucas-alves-7500a3333" target="_blank"
+                            rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="mailto:lucasalves200711@gmail.com" class="social-circle-btn" aria-label="Email">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/lucas-alves7500a3333" target="_blank" rel="noopener noreferrer"
-                        class="social-btn">LinkedIn</a>
-                    <a href="https://github.com/LucasAlves0718" target="_blank" rel="noopener noreferrer"
-                        class="social-btn">GitHub</a>
-                    <a href="mailto:lucasalves200711@gmail.com" class="social-btn">E-mail</a>
-                </div>
+                <!-- Interactive form -->
+                <form class="contact-form glass-panel" id="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form_label_name">Seu Nome</label>
+                        <input type="text" id="name" required placeholder="Digite seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form_label_email">Seu E-mail</label>
+                        <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form_label_message">Sua Mensagem</label>
+                        <textarea id="message" rows="5" required placeholder="Como posso te ajudar?"></textarea>
+                    </div>
+
+                    <p class="form-status" id="form-status"></p>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="justify-content:center; width:100%; border:none;">
+                        <i data-lucide="send"></i>
+                        <span data-i18n="form_submit">Enviar Mensagem</span>
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Lucas Alves Correa dos Santos. Portfólio de um Desenvolvedor de Sistemas.</p>
+        <p>&copy; 2026 Lucas Alves Corrêa dos Santos. <span data-i18n="footer_rights">Todos os direitos
+                reservados.</span></p>
+        <p class="powered" data-i18n="footer_credits">Construído com HTML5, CSS3 Puro, JavaScript ES6 e APIs Integradas.
+        </p>
     </footer>
 
+    <!-- Main Client-Side Logic -->
     <script src="script.js"></script>
 </body>
 
